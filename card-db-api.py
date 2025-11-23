@@ -21,7 +21,7 @@ FIELDNAMES = [
     'level', 'type', 'feature', 'battle_power_1', 'battle_power_2', 'battle_power_3', 'battle_power_4',
     'battle_power_ex', 'publication_year', 'name', 'ruby', 'character_name', 'effect', 'flavor_text',
     'participating_works', 'participating_works_url', 'errata_enable', 'errata_url', 'type_name',
-    'illustrator_name', 'image_url', 'thumbnail_image_url'
+    'illustrator_name', 'image_url', 'thumbnail_image_url', 'display_card_bundle_names'
 ]
 
 def sanitize_text(value):
@@ -63,6 +63,7 @@ def extract_card_data(card):
         'illustrator_name': detail.get('illustrator_name'),
         'image_url': detail.get('image_url'),
         'thumbnail_image_url': detail.get('thumbnail_image_url'),
+        'display_card_bundle_names': card.get('display_card_bundle_names')[0]
     }
 
 def get_all_cards():
