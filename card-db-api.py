@@ -50,6 +50,7 @@ def extract_card_data(card):
         'battle_power_4': card.get('battle_power_4'),
         'battle_power_ex': card.get('battle_power_ex'),
         'publication_year': card.get('publication_year'),
+        'display_card_bundle_names': card.get('display_card_bundle_names')[0] if card.get('display_card_bundle_names') else None,
         'name': detail.get('name'),
         'ruby': detail.get('ruby'),
         'character_name': detail.get('character_name'),
@@ -62,8 +63,7 @@ def extract_card_data(card):
         'type_name': detail.get('type_name'),
         'illustrator_name': detail.get('illustrator_name'),
         'image_url': detail.get('image_url'),
-        'thumbnail_image_url': detail.get('thumbnail_image_url'),
-        'display_card_bundle_names': card.get('display_card_bundle_names')[0]
+        'thumbnail_image_url': detail.get('thumbnail_image_url')
     }
 
 def get_all_cards():
@@ -104,5 +104,6 @@ def copy_file_to_directory(src, dst_dir):
 
 if __name__ == "__main__":
     cards = get_all_cards()
+    # print(cards[0])
     save_cards_to_csv(cards, OUTPUT_CSV)
     copy_file_to_directory('ultraman_cards.csv','docs/')
