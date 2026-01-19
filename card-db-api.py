@@ -50,7 +50,7 @@ def extract_card_data(card):
         'battle_power_4': card.get('battle_power_4'),
         'battle_power_ex': card.get('battle_power_ex'),
         'publication_year': card.get('publication_year'),
-        'display_card_bundle_names': card.get('display_card_bundle_names')[0] if card.get('display_card_bundle_names')[0] else 'No Set',
+        'display_card_bundle_names': card.get('display_card_bundle_names')[0] if card.get('display_card_bundle_names') else 'No Set',
         'name': detail.get('name'),
         'ruby': detail.get('ruby'),
         'character_name': detail.get('character_name'),
