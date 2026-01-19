@@ -29,7 +29,11 @@ jobs:
         run: python card-db-meta.py
 
       - name: Rules Update
-        run: wget https://ultraman-cardgame.com/lp/rule/UCG_Comprehensive_rule_ENG.pdf && wget https://ultraman-cardgame.com/lp/rule/UCG_floor_rule_ENG.pdf && wget https://ultraman-cardgame.com/lp/rule/UCG_penalty_guidelines_ENG.pdf && wget https://ultraman-cardgame.com/lp/rule/UCG_Sealed_Format_rule_ENG.pdf && wget 
+        run: |
+          wget -O rules/UCG_Comprehensive_rule_ENG.pdf https://ultraman-cardgame.com/lp/rule/UCG_Comprehensive_rule_ENG.pdf |
+          wget -O rules/UCG_floor_rule_ENG.pdf https://ultraman-cardgame.com/lp/rule/UCG_floor_rule_ENG.pdf |
+          wget -O rules/UCG_penalty_guidelines_ENG.pdf https://ultraman-cardgame.com/lp/rule/UCG_penalty_guidelines_ENG.pdf |
+          wget -O rules/UCG_Sealed_Format_rule_ENG.pdf https://ultraman-cardgame.com/lp/rule/UCG_Sealed_Format_rule_ENG.pdf
 
       - name: save changes
         run: |
