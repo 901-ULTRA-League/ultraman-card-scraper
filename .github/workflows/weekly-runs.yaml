@@ -28,6 +28,9 @@ jobs:
       - name: Run Meta Scrape
         run: python card-db-meta.py
 
+      - name: Rules Update
+        run: wget https://ultraman-cardgame.com/lp/rule/UCG_Comprehensive_rule_ENG.pdf && wget https://ultraman-cardgame.com/lp/rule/UCG_floor_rule_ENG.pdf && wget https://ultraman-cardgame.com/lp/rule/UCG_penalty_guidelines_ENG.pdf && wget https://ultraman-cardgame.com/lp/rule/UCG_Sealed_Format_rule_ENG.pdf && wget 
+
       - name: save changes
         run: |
           git config --global user.email "bot-parser@users.noreply.github.com"
